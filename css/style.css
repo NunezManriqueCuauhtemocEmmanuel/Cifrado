@@ -26,30 +26,31 @@ body{
 }
 .liquid h1:nth-child(1){
     color: rgb(255, 255, 255);
-    text-shadow: -2px 2px 0px #202020,
-    -4px 4px 0px #202020,
-    -6px 6px 0px #202020,
-    -8px 8px 0px #202020,
+    text-shadow: -2px 2px 0px #636363,
+    -4px 4px 0px #636363,
+    -6px 6px 0px #636363,
+    -8px 8px 0px #636363,
     -18px 18px 20px rgba(0,0,0,0.5),
     -18px 18px 50px rgba(0,0,0,0.5);
 }
 .liquid h1:nth-child(2){
-    color: #474747;
+    color: #969696;
     animation: animate 3s ease-in-out infinite;
 }
 .liquid h1:nth-child(3){
-    color: #474747;
+    color: #969696;
     opacity: 0.5;
     animation: animate 6s ease-in-out infinite;
 }
 .liquid h1:nth-child(4){
-    color: #474747;
+    color: #969696;
     animation: animate 4s ease-in-out infinite;
 }
 .cifrador{
     justify-content: center;
     text-align: center;
     margin: 50px;
+    margin-bottom: 100px;
 }
 .cifra{
     position: relative;
@@ -59,7 +60,10 @@ body{
     margin: 30px;
 }
 .cifra h1{
-    position: absolute; 
+    font-size: 6vw;
+    position: absolute;
+    
+    margin-bottom: 10px;
 }
 .cifra h1:nth-child(1){
     color: rgb(255, 255, 255);
@@ -84,11 +88,16 @@ body{
     animation: animate 4s ease-in-out infinite;
 }
 .cifrador h3, p{
-    color: #5b81ac;
+    color: #ffffff;
     padding: 10px;
 }
 .cifrador button{
+    padding: 10px;
     width: 100px;
+    margin: 30px;
+}
+#mensaje2{
+    margin-bottom: 100px;
 }
 input{
     width: 200px;
