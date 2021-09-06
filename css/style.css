@@ -12,13 +12,13 @@ body{
     height: 100vh;
 }
 .liquid{
+    background: #203e6146;
     position: relative;
     width: 100%;
     height: 100vh;
     display:flex;
     justify-content: center;
     align-items: center;
-    
 }
 .liquid h1{
     position: absolute; 
@@ -49,7 +49,7 @@ body{
 .cifrador{
     justify-content: center;
     text-align: center;
-    margin: 50px;
+    margin-top: 300px;
     margin-bottom: 100px;
 }
 .cifra{
@@ -96,11 +96,30 @@ body{
     width: 100px;
     margin: 30px;
 }
+input{
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+    border: 5px solid #594ae0;
+    background: #a288ff;
+    color: #ffffff;
+}
 #mensaje2{
     margin-bottom: 100px;
 }
-input{
-    width: 200px;
+input:hover{
+    animation: pulsoInput 1000ms 1;   
+}
+button{
+    border-radius: 20px;
+    background: rgb(25, 39, 85);
+    border: 2px rgb(25, 39, 85);
+    color: white;
+}
+button:hover{
+    background: rgb(56, 75, 139);
+    animation: pulso 1000ms;
 }
 
 @keyframes animate {
@@ -109,6 +128,22 @@ input{
     }
     50%{
         clip-path: polygon(0 63%, 16% 66%, 35% 50%, 55% 41%, 71% 46%, 84% 52%, 100% 74%, 100% 100%, 0% 100%);
+    }
+}
+@keyframes pulso {
+    0%{
+        box-shadow: 0 0 0 0 rgba(56, 75, 139, 0.6)
+    }
+    100%{
+        box-shadow: 0 0 16px 24px rgba(57, 132, 182, 0);
+    }
+}
+@keyframes pulsoInput {
+    0%{
+        box-shadow: 0 0 0 0 rgba(97, 86, 192, 0.6);
+    }
+    100%{
+        box-shadow: 0 0 16px 24px rgba(57, 132, 182, 0);
     }
 }
 @media (max-width: 400px) {
