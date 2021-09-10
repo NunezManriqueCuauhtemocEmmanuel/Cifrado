@@ -4,12 +4,12 @@ function inicio(){
     document.getElementById("mensaje").addEventListener("keyup", function(){
         this.value = this.value.toUpperCase();
     }, true);
-    document.getElementById("encriptar").addEventListener("click", function(){
+    document.getElementById("cifrar").addEventListener("click", function(){
         let texto = document.getElementById("mensaje").value;
         let desplazamiento = document.getElementById("desplazamiento").value;
         document.getElementById("mensaje2").value = cifrardo(texto, desplazamiento);
     }, true);
-    document.getElementById("desencriptar").addEventListener("click", function(){
+    document.getElementById("descifrar").addEventListener("click", function(){
         let texto = document.getElementById("mensaje").value;
         let desplazamiento = document.getElementById("desplazamiento").value;
         document.getElementById("mensaje2").value=descifrado(texto, desplazamiento);
