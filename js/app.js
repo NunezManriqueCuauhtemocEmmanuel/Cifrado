@@ -7,12 +7,12 @@ function inicio(){
     document.getElementById("cifrar").addEventListener("click", function(){
         let texto = document.getElementById("mensaje").value;
         let desplazamiento = document.getElementById("desplazamiento").value;
-        document.getElementById("mensaje2").value = cifrardo(texto, desplazamiento);
+        document.getElementById("mensaje2").value = cifrar2(texto, desplazamiento);
     }, true);
     document.getElementById("descifrar").addEventListener("click", function(){
         let texto = document.getElementById("mensaje").value;
         let desplazamiento = document.getElementById("desplazamiento").value;
-        document.getElementById("mensaje2").value=descifrado(texto, desplazamiento);
+        document.getElementById("mensaje2").value=descifrar(texto, desplazamiento);
     }, true);
     document.getElementById("cifrarT").addEventListener("click", function(){
         let textoT = document.getElementById("mensajeT").value;
@@ -26,7 +26,7 @@ function inicio(){
     }, true);
 }
 
-function cifrardo (texto, desplazamiento){
+function cifrar2 (texto, desplazamiento){
     if(!texto)
     return "";
     const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -34,7 +34,7 @@ function cifrardo (texto, desplazamiento){
     return texto.replace(/[A-Z]/ig, c=> letras[(letras.indexOf(c)+desplazamiento)%26]);
 }
 
-function descifrado (texto, desplazamiento){
+function descifrar (texto, desplazamiento){
     if(!texto)
     return "";
     const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -85,3 +85,4 @@ function descifrarT (texto, clave){
     }
     return message.substring(0,texto.length);
 }
+
