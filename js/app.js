@@ -4,15 +4,15 @@ function inicio(){
     document.getElementById("mensaje").addEventListener("keyup", function(){
         this.value = this.value.toUpperCase();
     }, true);
-    document.getElementById("cifrar").addEventListener("click", function(){
+    document.getElementById("encriptar").addEventListener("click", function(){
         let texto = document.getElementById("mensaje").value;
         let desplazamiento = document.getElementById("desplazamiento").value;
-        document.getElementById("mensaje2").value = cifrar2(texto, desplazamiento);
+        document.getElementById("mensaje2").value = cifrardo(texto, desplazamiento);
     }, true);
-    document.getElementById("descifrar").addEventListener("click", function(){
+    document.getElementById("desencriptar").addEventListener("click", function(){
         let texto = document.getElementById("mensaje").value;
         let desplazamiento = document.getElementById("desplazamiento").value;
-        document.getElementById("mensaje2").value=descifrar(texto, desplazamiento);
+        document.getElementById("mensaje2").value=descifrado(texto, desplazamiento);
     }, true);
     document.getElementById("cifrarT").addEventListener("click", function(){
         let textoT = document.getElementById("mensajeT").value;
@@ -26,7 +26,7 @@ function inicio(){
     }, true);
 }
 
-function cifrar2 (texto, desplazamiento){
+function cifrardo (texto, desplazamiento){
     if(!texto)
     return "";
     const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -34,7 +34,7 @@ function cifrar2 (texto, desplazamiento){
     return texto.replace(/[A-Z]/ig, c=> letras[(letras.indexOf(c)+desplazamiento)%26]);
 }
 
-function descifrar (texto, desplazamiento){
+function descifrado (texto, desplazamiento){
     if(!texto)
     return "";
     const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
