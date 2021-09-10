@@ -14,25 +14,16 @@ function inicio(){
         let desplazamiento = document.getElementById("desplazamiento").value;
         document.getElementById("mensaje2").value=descifrar(texto, desplazamiento);
     }, true);
-}
-
-function cifrar(texto, desplazamiento){
-    let resultado = "";
-    let letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-    desplazamiento = (desplazamiento % 26 + 26) % 26;
-
-    if (texto){
-        for (let i = 0; i<texto.length; i++){
-            if (letras.indexOf(texto[i])!=-1) {
-                let posicion = ((letras.indexOf(texto[i])+desplazamiento)%26);
-                resultado += letras[posicion];
-            } else {
-                resultado += texto[i];
-            }
-        }
-    }
-    return resultado;
+    document.getElementById("cifrarT").addEventListener("click", function(){
+        let textoT = document.getElementById("mensajeT").value;
+        let clave = document.getElementById("clave").value;
+        document.getElementById("mensaje2T").value = cifrarT(textoT, clave);
+    }, true);
+    document.getElementById("descifrarT").addEventListener("click", function(){
+        let textoT = document.getElementById("mensajeT").value;
+        let clave = document.getElementById("clave").value;
+        document.getElementById("mensaje2T").value=descifrarT(textoT, clave);
+    }, true);
 }
 
 function cifrar2 (texto, desplazamiento){
@@ -49,4 +40,48 @@ function descifrar (texto, desplazamiento){
     const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     desplazamiento = (desplazamiento % 26 - 26) % 26;
     return texto.replace(/[A-Z]/ig, c=> letras[(letras.indexOf(c)-desplazamiento)%26]);
+}
+
+function cifrarT (texto, clave){
+    let cont = 0;
+    clave = parseInt(clave, 10);
+    let message="";
+    for(var i=0;i<clave;i++){
+        cont = i;
+        while(cont<texto.length){
+            message+=texto[cont];
+            cont+=clave;
+        }
+    }
+    return message;
+}
+
+function descifrarT (texto, clave){
+    let cont = 0;
+    let res = texto.length%clave;
+    clave = parseInt(clave, 10);
+    let num = 0;
+    num = Math.floor(texto.length/clave);
+    let rep = 0;
+    if(res>0){
+        rep = num+1;
+    }else{
+        rep = num;
+    }
+    let message="";
+    for(var i=0;i<rep;i++){
+        cont = i;
+        while(cont<texto.length){
+            if(res>0){
+                message+=texto[cont];
+                cont+=num+1;
+                res-=1;
+            }else{
+                message+=texto[cont];
+                cont+=num;
+            }
+        }
+        res = texto.length%clave;
+    }
+    return message.substring(0,texto.length);
 }
